@@ -69,6 +69,17 @@ displayAverageSalary: This function will take in the generated array of employee
 
 // Select a random employee
 const getRandomEmployee = function(employeesArray) {
+
+  function genRandomNumber(min, max){
+    return Math.floor(Math.random() * (max - min + 1) + min)
+    }
+  
+    function getRandomEmployee(){
+      const idx = genRandomNumber(0, getRandomEmployee.length - 1);
+      console.log( employeesArray[idx] );
+    }
+    
+    getRandomEmployee()
   // TODO: Select and display a random employee
 
 }
