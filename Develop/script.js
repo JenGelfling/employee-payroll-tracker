@@ -1,12 +1,9 @@
 // Get a reference to the #add-employees-btn element
 const addEmployeesBtn = document.querySelector('#add-employees-btn');
 
-
-
 firstName = ""
 lastName = ""
 salary = ""
-
 
 const employeesArray = []
 
@@ -26,37 +23,18 @@ const collectEmployees = function() {
 }
 
 
-
-console.log(employeesArray)
-
-/* collectEmployees should return an array like this:
-
-const collectEmployees = function() {
-  // TODO: Get user input to create and return an array of employee objects
-  
-}
-
-[
-  {
-      firstName:"John",
-      lastName:"Smith",
-      salary:12345
-  },
-  {
-      firstName:"Jane",
-      lastName:"Doe",
-      salary:54321
-  }
-]
-*/
-
-
 // Display the average salary
 const displayAverageSalary = function(employeesArray) {
   let totalSalary = 0;
+  for(let i = 0; i < collectEmployees.length; i++) {
+    totalSalary += collectEmployees[i];
+  }
+  const average = totalSalary / collectEmployees.length;
+
 
   // TODO: Calculate and display the average salary
 }
+
 
 /*
 displayAverageSalary: This function will take in the generated array of employees and log the average salary and number of employees to the console. You should use a template literal string for this task.
