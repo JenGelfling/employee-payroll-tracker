@@ -84,26 +84,6 @@ const getRandomEmployee = function(employeesArray) {
 
 }
 
-
-/*
-getRandomEmployee: This function will take in the generated array of employees, randomly select one employee, and use a template literal to log their full name to the console. The built in Math
-
-  function genRandomNumber(min, max){
-  return Math.floor(Math.random() * (max - min + 1) + min)
-  }
-
-  function getRandomColor(){
-    const idx = genRandomNumber(0, colors.length - 1);
-    console.log( colors[idx] );
-  }
-  
-  getRandomColor()
-
-
-*/
-
-
-
 // 
 /*
   ====================
