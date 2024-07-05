@@ -13,7 +13,7 @@ const collectEmployees = function(employeesArray = []) {
   const lastName = prompt('What is your last name?');
   let salary = Number(prompt('What is your salary?'));
   if (isNaN(salary)){
-    salary='0'
+    salary=Number(0)
   }
   employeesArray.push({ firstName: firstName, lastName:lastName, salary:salary});
   continueAdd = confirm("Add another employee?")
@@ -42,7 +42,6 @@ const getRandomEmployee = function(employeesArray) {
   
     function getRandomEmployee(){
       const idx = genRandomNumber(0, getRandomEmployee.length - 1);
-      console.log( employeesArray[idx] );
       console.log(`Congratulations to ${employeesArray[idx].firstName} ${employeesArray[idx].lastName}, our random drawing winner!`);
     }
     
