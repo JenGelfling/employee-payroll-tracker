@@ -1,19 +1,20 @@
 // Get a reference to the #add-employees-btn element
 const addEmployeesBtn = document.querySelector('#add-employees-btn');
 
+// Collect employee data for the "employee" const in later function
 firstName = ""
 lastName = ""
 salary = ""
 
-// const employeesArray = []
-
-// Collect employee data for the "employee" const in later function
+// Get user input to create and return an array of employee objects
 const collectEmployees = function(employeesArray = []) {
-  // TODO: Get user input to create and return an array of employee objects
   let continueAdd = true;
   const firstName = prompt('What is your first name?');
   const lastName = prompt('What is your last name?');
-  const salary = prompt('What is your salary?');
+  let salary = Number(prompt('What is your salary?'));
+  if (isNaN(salary)){
+    salary='0'
+  }
   employeesArray.push({ firstName: firstName, lastName:lastName, salary:salary});
   continueAdd = confirm("Add another employee?")
   if (continueAdd){
@@ -22,7 +23,7 @@ const collectEmployees = function(employeesArray = []) {
   return employeesArray
 }
 
-
+  // Calculate and display the average salary
 const displayAverageSalary = function(employeesArray) {
   let totalSalary = 0;
   for(let i = 0; i < employeesArray.length; i++) {
@@ -30,10 +31,9 @@ const displayAverageSalary = function(employeesArray) {
   }
   const result = totalSalary / employeesArray.length;
   console.log('The average employee salary between our ' + employeesArray.length + ' employee(s) is ' + '$' + result)
-  // TODO: Calculate and display the average salary
 }
 
-// Select a random employee
+// Select a random employee and display winner
 const getRandomEmployee = function(employeesArray) {
 
   function genRandomNumber(min, max){
@@ -43,12 +43,10 @@ const getRandomEmployee = function(employeesArray) {
     function getRandomEmployee(){
       const idx = genRandomNumber(0, getRandomEmployee.length - 1);
       console.log( employeesArray[idx] );
-      console.log(`Congratulations to ${employeesArray[idx].firstName} ${employeesArray[idx].lastName} our random drawing winner!`);
+      console.log(`Congratulations to ${employeesArray[idx].firstName} ${employeesArray[idx].lastName}, our random drawing winner!`);
     }
     
     getRandomEmployee()
-  // TODO: Select and display a random employee
-
 }
 
 /*
