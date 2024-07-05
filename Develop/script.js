@@ -23,51 +23,15 @@ const collectEmployees = function(employeesArray = []) {
 }
 
 
-
-
-
-// Display the average salary
-
-// // Function to calculate average salary
-// function displayAverageSalary(employeesArray) {
-//   // Calculate total sum of salaries
-//   let totalSalary = employeesArray.reduce((sum, employeesArray) => sum + employeesArray.salary, 0);
-  
-//   // Calculate average salary
-//   let averageSalary = totalSalary / employeesArray.length;
-  
-//   return displayAverageSalary;
-// }
-
-
-// // Calculate average salary using the function
-// let averageSalary = displayAverageSalary(employeesArray);
-
-// // Display the average salary
-// console.log(`Average salary: ${displayAverageSalary}`);
-
-
 const displayAverageSalary = function(employeesArray) {
   let totalSalary = 0;
   for(let i = 0; i < employeesArray.length; i++) {
     totalSalary += parseFloat(employeesArray[i].salary);
   }
   const result = totalSalary / employeesArray.length;
-  console.log($result)
+  console.log('The average employee salary between our ' + employeesArray.length + ' employee(s) is ' + '$' + result)
   // TODO: Calculate and display the average salary
 }
-// console.log(employeesArray.salary)
-// console.log(displayAverageSalary)
-/*
-
-
-displayAverageSalary: This function will take in the generated array of employees and log the average salary and number of employees to the console. You should use a template literal string for this task.
-*/
-
-
-
-// 
-
 
 // Select a random employee
 const getRandomEmployee = function(employeesArray) {
@@ -79,6 +43,7 @@ const getRandomEmployee = function(employeesArray) {
     function getRandomEmployee(){
       const idx = genRandomNumber(0, getRandomEmployee.length - 1);
       console.log( employeesArray[idx] );
+      console.log(`Congratulations to ${employeesArray[idx].firstName} ${employeesArray[idx].lastName} our random drawing winner!`);
     }
     
     getRandomEmployee()
