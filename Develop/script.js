@@ -5,10 +5,10 @@ firstName = ""
 lastName = ""
 salary = ""
 
-const employeesArray = []
+// const employeesArray = []
 
 // Collect employee data for the "employee" const in later function
-const collectEmployees = function() {
+const collectEmployees = function(employeesArray = []) {
   // TODO: Get user input to create and return an array of employee objects
   let continueAdd = true;
   const firstName = prompt('What is your first name?');
@@ -17,26 +17,50 @@ const collectEmployees = function() {
   employeesArray.push({ firstName: firstName, lastName:lastName, salary:salary});
   continueAdd = confirm("Add another employee?")
   if (continueAdd){
-    collectEmployees()
+    return collectEmployees(employeesArray)
   }
   return employeesArray
 }
 
 
+
+
+
 // Display the average salary
+
+// // Function to calculate average salary
+// function displayAverageSalary(employeesArray) {
+//   // Calculate total sum of salaries
+//   let totalSalary = employeesArray.reduce((sum, employeesArray) => sum + employeesArray.salary, 0);
+  
+//   // Calculate average salary
+//   let averageSalary = totalSalary / employeesArray.length;
+  
+//   return displayAverageSalary;
+// }
+
+
+// // Calculate average salary using the function
+// let averageSalary = displayAverageSalary(employeesArray);
+
+// // Display the average salary
+// console.log(`Average salary: ${displayAverageSalary}`);
+
+
 const displayAverageSalary = function(employeesArray) {
   let totalSalary = 0;
-  for(let i = 0; i < collectEmployees.length; i++) {
-    totalSalary += collectEmployees[i];
+  for(let i = 0; i < employeesArray.length; i++) {
+    totalSalary += parseFloat(employeesArray[i].salary);
   }
-  const average = totalSalary / collectEmployees.length;
-
-
+  const result = totalSalary / employeesArray.length;
+  console.log($result)
   // TODO: Calculate and display the average salary
 }
-
-
+// console.log(employeesArray.salary)
+// console.log(displayAverageSalary)
 /*
+
+
 displayAverageSalary: This function will take in the generated array of employees and log the average salary and number of employees to the console. You should use a template literal string for this task.
 */
 
@@ -62,7 +86,6 @@ const getRandomEmployee = function(employeesArray) {
 
 }
 
-// 
 /*
   ====================
   STARTER CODE
